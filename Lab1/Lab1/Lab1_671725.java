@@ -175,6 +175,3 @@ public class Lab1_671725 {
     }
 }
 
-// D:\Lab1\Lab1> javac Lab1_671725.java pack\*.java
-// cd ..
-// D:\Lab1> java Lab1_671725
