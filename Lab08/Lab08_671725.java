@@ -17,8 +17,10 @@ public class Lab08_671725 {
         System.out.println(Arrays.toString(arr));
     }
     static void dutch_national_flag(int[] arr) {
+        
         int left_value = arr[0];    // min
         int right_value = arr[0];   // max
+
         for (int i = 1; i < arr.length; i++) {
             left_value = Math.min(left_value, arr[i]);
             right_value = Math.max(right_value, arr[i]);

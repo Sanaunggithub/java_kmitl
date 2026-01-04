@@ -21,7 +21,7 @@ public static void demo1() {
     public static void demo2() {
         System.out.println("----construct from array of int----");
         // Integer[] tree = {1,2,3,4,5,null,8,null,null,6,7,9}; 
-        Integer[] tree = {4,2,6,1,3,5,7,null,null,null,null,null,null,null,9,8,null}; // 4 2 6 5 7 1 3 9 8
+        Integer[] tree = {4,2,6,1,3,5,7,null,null,null,null,null,null,null,9,8,null}; // used Integer[] because it allows null while int[] doesn't.
         MyBST_Basic_671725 bst = new MyBST_Basic_671725(tree);
         System.out.println(bst); // 1 2 3 4 5 6 7 8 9
     }

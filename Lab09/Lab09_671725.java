@@ -57,6 +57,15 @@ public class Lab09_671725 {
         List<Employee> list = Arrays.asList(new Employee("Yindee", 2000),
                                             new Employee("Preeda", 1500),
                                             new Employee("Pramote", 3000));
+
+
+        // asList is shortcut of this.
+
+        // List<Employee> list = new ArrayList<>();
+        // list.add(new Employee("Yindee", 2000));
+        // list.add(new Employee("Preeda", 1500));
+        // list.add(new Employee("Pramote", 3000));
+    
         pq.addAll(list); // addAll is shortcut for each loop
         System.out.println(pq);
         // [Emp Preeda(1500), Emp Yindee(2000), Emp Pramote(3000)]
@@ -66,6 +75,7 @@ public class Lab09_671725 {
         int[] stones = {2,7,4,1,8,1};
         /* your code */
 
+        // max heap
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
         for (int s : stones) {

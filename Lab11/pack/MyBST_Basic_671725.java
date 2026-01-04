@@ -3,9 +3,8 @@ package pack;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 public class MyBST_Basic_671725 {
-    private BNode root;
+    protected BNode root;
     public MyBST_Basic_671725() {  root = null; }
     public MyBST_Basic_671725(Integer[] input) {
         if (input.length == 0)
@@ -71,7 +70,6 @@ public class MyBST_Basic_671725 {
         printPreOrderRecurse(root);
         System.out.println();
     }
-
     
     private void printPreOrderRecurse (BNode node) {
         if (node == null) return; 
@@ -101,6 +99,7 @@ public class MyBST_Basic_671725 {
 
     private BNode searchRecurse(int d, BNode node) {   
         if (node == null) return null;
+        if (d == node.data) return node;
 
         /* your code 6 */
 
@@ -112,7 +111,6 @@ public class MyBST_Basic_671725 {
         return size(root);
     }
 
-    // total number of nodes
     private int size(BNode node) {
         if (node == null) return 0;
         return 1 + size(node.left) + size(node.right);  /* your code 7 */
@@ -121,7 +119,6 @@ public class MyBST_Basic_671725 {
     public int height() { 
         return height(root);
     }
-    // longest path from node to leaf
     private int height(BNode node) {
         if (node == null) return 0;
         return 1 + Math.max(height(node.left), height(node.right));  
@@ -147,96 +144,8 @@ public class MyBST_Basic_671725 {
                 if(cur.right != null) queue.offer(cur.right);
                
             }
-            
             System.out.println();
             level++;
         }
     }
 }
-
-//           4
-//        /     \
-//      2         6
-//    /   \     /   \
-//   1     3   5     7
-//                       \
-//                        9
-//                       /
-//                      8
-
-
-// Queue: [4]
-
-// Level: 0
-
-// Step 1: Process Level 0
-
-// size = queue.size() = 1 → one node at this level.
-
-// For loop (i = 0):
-
-// cur = queue.poll() → removes 4
-
-// Print: 4
-
-// Add children: queue.offer(cur.left) → 2, queue.offer(cur.right) → 6
-
-// Queue after Level 0: [2, 6]
-
-// Output: Level 0: 4
-
-// Step 2: Process Level 1
-
-// size = queue.size() = 2 → two nodes at this level.
-
-// For loop:
-
-// cur = queue.poll() → removes 2
-
-// Print: 2
-
-// Add children: 1 and 3 → queue.offer(1), queue.offer(3)
-
-// Queue now: [6, 1, 3]
-
-// cur = queue.poll() → removes 6
-
-// Print: 6
-
-// Add children: 5 and 7 → queue.offer(5), queue.offer(7)
-
-// Queue now: [1, 3, 5, 7]
-
-// Output: Level 1: 2 64
-
-// Step 3: Process Level 2
-
-// size = queue.size() = 4 → four nodes at this level.
-
-// For loop:
-
-// cur = queue.poll() → removes 1
-
-// Print: 1
-
-// No children → queue unchanged → [3,5,7]
-
-// cur = queue.poll() → removes 3
-
-// Print: 3
-
-// No children → queue → [5,7]
-
-// cur = queue.poll() → removes 5
-
-// Print: 5
-
-// No children → queue → [7]
-
-// cur = queue.poll() → removes 7
-
-// Print: 7
-
-// Add child: 9 → queue.offer(9) → [9]
-
-// Output: Level 2: 1 3 5 7

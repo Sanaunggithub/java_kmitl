@@ -10,6 +10,7 @@ public class MyMinHeap_671725 {
         heap[j] = heap[i] - heap[j];
         heap[i] = heap[i] - heap[j];
     }
+
     public int peek() {
         return heap[0];
     }
@@ -45,7 +46,7 @@ public class MyMinHeap_671725 {
     public int remove() {
         int d = heap[0];
         heap[0] = heap[--size];
-        heap[size] = d; // this line is optional
+        
         int i = 0;
 
         while (true) {
